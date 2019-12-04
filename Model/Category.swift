@@ -1,9 +1,17 @@
-//
-//  Category.swift
-//  testApp
-//
-//  Created by mac on 12/2/19.
-//  Copyright © 2019 mac. All rights reserved.
-//
-
 import Foundation
+
+public struct Category: Codable {
+    var id: String = ""
+    var title: String = ""
+    var image: String = ""
+}
+public struct CategoryListResponse: Codable {
+    
+    let status: String?
+    let data: [Category]
+    
+    private enum CodingKeys: String, CodingKey {
+        case status
+        case data
+    }
+}
